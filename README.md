@@ -60,7 +60,7 @@ Votre mission (si vous l'acceptez) : Créez une **image applicative customisée 
 
 **Architecture cible :** Ci-dessous, l'architecture cible souhaitée.   
   
-![Screenshot Actions](Architecture_cible.jpg)   
+![Screenshot Actions](Architecture_cible.png)   
   
 ---------------------------------------------------  
 ## Processus de travail (résumé)
