@@ -1,0 +1,11 @@
+- name: Deploy Custom Nginx to K3d
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Import image into K3d
+      command: k3d image import my-custom-nginx:v1 -c lab
+
+    - name: Apply K8s Manifest
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', 'k8s-manifest.yml') }}"

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-custom
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-custom
+  template:
+    metadata:
+      labels:
+        app: nginx-custom
+    spec:
+      containers:
+      - name: nginx
+        image: my-custom-nginx:v1
+        imagePullPolicy: Never # Important : l'image est locale au cluster
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx-custom
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: NodePort
