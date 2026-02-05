@@ -8,4 +8,5 @@
     - name: Apply K8s Manifest
       kubernetes.core.k8s:
         state: present
+        namespace: default
         definition: "{{ lookup('file', 'k8s-manifest.yml') }}"
