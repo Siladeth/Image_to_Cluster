@@ -17,7 +17,7 @@ build {
 
   # Copie du fichier index.html du repo vers l'image
   provisioner "file" {
-    source      = "./index.html"
+    source      = "../index.html"
     destination = "/usr/share/nginx/html/index.html"
   }
 
